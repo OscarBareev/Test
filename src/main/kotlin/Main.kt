@@ -17,10 +17,8 @@ fun calculatePrice(
      return if (checkLimits(transferAmount, lastPurchases, cardType)) {
         when (cardType) {
             "vkPay" -> 0
-            "Mastercard" -> firstTypeOfCards(transferAmount)
-            "Maestro" -> firstTypeOfCards(transferAmount)
-            "Visa" -> secondTypeOfCards(transferAmount)
-            "Мир" -> secondTypeOfCards(transferAmount)
+            "Mastercard", "Maestro" -> firstTypeOfCards(transferAmount)
+            "Visa", "Мир" -> secondTypeOfCards(transferAmount)
             else -> 999999999
         }
     } else {
